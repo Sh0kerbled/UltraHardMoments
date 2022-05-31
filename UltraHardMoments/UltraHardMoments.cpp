@@ -5,45 +5,69 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <ostream>
+#include <istream>
+
 using namespace std;
 
 //task 1
-template <typename N>
-void swap(N* a, N* b)
-{
-	N temp = *a;
-	*a = *b;
-	*b = temp;
+void ex1() {
+	double n, sum = 0, num, a;
+	for (n = 1; n <= 3; n++) {
+		cin >> num;
+		sum += num;
+	}
+	a = sum / 3;
+	cout << endl << a << endl;
 }
 
 //task 2
 template <typename T>
-void SortPointer(vector<T>& sorti)
+class Matrix
 {
-	for (const auto& item : sorti) {
-		cout << "{" << item.first << "," << item.second << "}" << "; ";
+
+    T* data;
+    unsigned int i;
+    unsigned int j;
+	double A[2][2];
+	double det;
+public:
+    Matrix(unsigned int _i, unsigned int _j){
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				cin >> A[i][j];
+		det = A[0][0] * A[1][1] - A[0][1] * A[1][0];
 	}
-	cout << endl;
-}
+    Matrix(const Matrix& m);
+    Matrix& operator=(const Matrix& m);
+
+    T determinant() const;
+};
+
+//task 3
+class OwnIterator
+{
+public:;
+	std::vector<int> v = { 1, 2, 3, 4, 5 };
+
+};
 
 int main()
 {
 	//task 1
-	setlocale(LC_ALL, "ru");
-	int a(10);
-	int b(15);
+	ex1();
+	//task 3
+	OwnIterator it;
+	auto iter = it.v.begin();
+	while (iter != it.v.end())
+	{
+		std::cout << *iter << std::endl;
+		++iter;             
+	}
+	
+	
+	 
 
-	swap(&a, &b);
-	cout << a << b << endl;
-
-	//task 2
-	vector<pair<int, string>> sortirovka = { {3,"c"},
-										 {4,"d"},
-										 {1,"a"},
-										 {2,"b"} };
-
-	sort(sortirovka.begin(), sortirovka.end());
-
-	cout << "Сортировка: ";
-	SortPointer(sortirovka);
+	
+	
 }
