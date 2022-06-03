@@ -8,42 +8,31 @@
 using namespace std;
 
 //task 1
-template <typename N>
-void swap(N* a, N* b)
-{
-	N temp = *a;
-	*a = *b;
-	*b = temp;
+void insert_sort() {
+	vector<int> v = { 4, 2, 3, 1, 5 };
+	generate(v.begin(), v.end(), []() {return (rand() % 100); });
+	for (int n : v) {
+		cout << n << " ";
+	}
 }
 
 //task 2
-template <typename T>
-void SortPointer(vector<T>& sorti)
+void SecondCode()
 {
-	for (const auto& item : sorti) {
-		cout << "{" << item.first << "," << item.second << "}" << "; ";
-	}
-	cout << endl;
-}
+    vector<double> a(100);
 
+    double error = 0;
+    generate(a.begin(), a.end(), [](int i) { return ++i; });
+
+    copy(a.begin(), a.end(), ostream_iterator<int> { cout, " " });
+
+    for_each(a.begin(), a.end(), [&](const double& i)
+        {
+            error += pow(i - static_cast<int>(i), 2);
+        });
+}
 int main()
 {
-	//task 1
-	setlocale(LC_ALL, "ru");
-	int a(10);
-	int b(15);
-
-	swap(&a, &b);
-	cout << a << b << endl;
-
-	//task 2
-	vector<pair<int, string>> sortirovka = { {3,"c"},
-										 {4,"d"},
-										 {1,"a"},
-										 {2,"b"} };
-
-	sort(sortirovka.begin(), sortirovka.end());
-
-	cout << "Сортировка: ";
-	SortPointer(sortirovka);
+	insert_sort();
+    SecondCode();
 }

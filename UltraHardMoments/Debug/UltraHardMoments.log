@@ -1,0 +1,22 @@
+﻿  UltraHardMoments.cpp
+  The contents of <optional> are available only with C++17 or later.
+C:\Users\dauch\source\repos\UltraHardMoments\UltraHardMoments\UltraHardMoments.cpp(31,16): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(4096,18): warning C4244: аргумент: преобразование "double" в "const _Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xutility(4108): message : выполняется компиляция ссылки на экземпляр шаблон функции "_OutIt std::_Copy_unchecked<double*,_OutIt>(_InIt,_InIt,_OutIt)"
+          with
+          [
+              _OutIt=std::ostream_iterator<int,char,std::char_traits<char>>,
+              _InIt=double *
+          ]
+C:\Users\dauch\source\repos\UltraHardMoments\UltraHardMoments\UltraHardMoments.cpp(29): message : выполняется компиляция ссылки на экземпляр шаблон функции "_OutIt std::copy<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,std::ostream_iterator<int,char,std::char_traits<char>>>(_InIt,_InIt,_OutIt)"
+          with
+          [
+              _OutIt=std::ostream_iterator<int,char,std::char_traits<char>>,
+              _Ty=double,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>
+          ]
+  UltraHardMoments.vcxproj -> C:\Users\dauch\source\repos\UltraHardMoments\Debug\UltraHardMoments.exe
