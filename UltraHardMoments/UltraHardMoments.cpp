@@ -5,45 +5,59 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <iterator>
+#include <set>
+#include <map>
 using namespace std;
 
 //task 1
-template <typename N>
-void swap(N* a, N* b)
+void DeleteIt()
 {
-	N temp = *a;
-	*a = *b;
-	*b = temp;
+	set <string> first;
+	first.insert("one");
+	first.insert("two");
+	first.insert("one");
+
+	copy(first.begin(), first.end(), ostream_iterator<string>(cout, " "));
+	cout << endl << endl;
+
+	set <int> second;
+	second.insert(1);
+	second.insert(2);
+	second.insert(1);
+
+	copy(second.begin(), second.end(), ostream_iterator<int>(cout, " "));
+	cout << endl << endl;
+
+	set <bool> third;
+	third.insert(true);
+	third.insert(false);
+	third.insert(true);
+
+	copy(third.begin(), third.end(), ostream_iterator<bool>(cout, " "));
+	cout << endl << endl;
 }
 
 //task 2
-template <typename T>
-void SortPointer(vector<T>& sorti)
+
+void text()
 {
-	for (const auto& item : sorti) {
-		cout << "{" << item.first << "," << item.second << "}" << "; ";
-	}
-	cout << endl;
+	multimap<int, string> the;
+	string jtext;
+	const string suggest_end = ".!?";
+
+	getline(cin, jtext);
+	jtext.push_back('.');
+	cout << jtext;
+	while (!jtext.empty()) {}
+
+	//for_each(the.begin(), the.end(), [](pair<int, string> item) {
+	//	jtext.find();
+	//	});
 }
 
 int main()
 {
-	//task 1
-	setlocale(LC_ALL, "ru");
-	int a(10);
-	int b(15);
-
-	swap(&a, &b);
-	cout << a << b << endl;
-
-	//task 2
-	vector<pair<int, string>> sortirovka = { {3,"c"},
-										 {4,"d"},
-										 {1,"a"},
-										 {2,"b"} };
-
-	sort(sortirovka.begin(), sortirovka.end());
-
-	cout << "Сортировка: ";
-	SortPointer(sortirovka);
+	DeleteIt();
+	text();
 }
